@@ -1,0 +1,77 @@
+<div class="form-content">
+    <form  class="form">
+        <div class="form-head">
+            <div class="form-head-text">Address Form</div>
+            <img routerLink="" class="form-head-image" src="../assets/cancel.jpeg"
+                    alt="logo">
+        </div>
+        <div class="form-constrains">
+            <div class="row-content">
+                <label for="name"  class="label text">Full Name</label>
+                <br>
+                <input type="text"  class="input" id="name" name="name" placeholder="Enter Your Name here" required  [(ngModel)]="addressbook.fullName">
+            </div>
+            <div class="row-content">
+                <label for="email"  class="label text">Email</label>
+                <br>
+                <input type="email"  class="input" id="email" name="email" placeholder="Enter Your mailId here" required  [(ngModel)]="addressbook.email">
+            </div>
+            <div class="row-content">
+                <label for="phoneNumber"  class="label text">Phone Number</label>
+                <br>
+                <input type="tel"  class="input" id="phoneNumber" name="phoneNumber" placeholder="Enter Your Number here"
+                [(ngModel)]="addressbook.phone" required>
+            </div>
+            <div class="row-content">
+                <label for="address" class="label text">Address</label>
+                <br>
+                <textarea [(ngModel)]="addressbook.address" name="address"  id="address" required></textarea>
+            </div>
+            <div class="row-content">
+                <div class="column-constrains">
+                    <div class="column-content">
+                        <label for="city" class="label text">City</label>
+                        <br>
+                        <select name="city" id="city" [(ngModel)]="addressbook.city"  required>
+                            <option value="Select City"></option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Mumbai">Nashik</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Surat">Surat</option>
+                            <option value="Pune">Pune</option>
+                            
+                        </select>
+                    </div>
+                    <div class="column-content">
+                        <label for="state" class="label text">State</label>
+                        <br>
+                        <select name="state" id="state" [(ngModel)]="addressbook.state">
+                            <option value="Select State"></option>
+                            <option value="Andhra Pradesh">Karnataka</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar</option>
+                            <option value="Arunachal Pradesh">Goa</option>
+                            <option value="Assam">Kerela</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            
+                            
+                        </select>
+                    </div>
+                    <div class="column-content">
+                        <label for="zip" class="label text">Zip code</label>
+                        <br>
+                        <input [(ngModel)]="addressbook.zip" type="text" class="input" id="zip" name="zip" required>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons-contact">
+                <button (click)="onAddContact()" type="submit"  class="button button-text" id="submitButton">Add</button>
+                <button type="reset" class="button button-text" id="resetButton">Reset</button>
+            </div>
+        </div>
+    </form>
