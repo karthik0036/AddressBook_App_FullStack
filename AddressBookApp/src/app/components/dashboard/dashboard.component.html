@@ -15,7 +15,7 @@
         <table id="table-display" class="table">
             
             <tr>
-                <!-- <th></th> -->
+                <th>Id</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Address</th>
@@ -26,7 +26,7 @@
                 <th>Actions</th>
             </tr>
             <tr *ngFor="let person of addressbook;">
-                <!-- <td>{{person.contactId}}</td> -->
+                <td>{{person.contactId}}</td>
                 <td>{{person.fullName}}</td>
                 <td>{{person.email}}</td>
                 <td>
@@ -37,8 +37,8 @@
                 <td>{{person.zip}}</td>
                 <td>{{person.phone}}</td>
                 <td>
-                    <img  src="../../../assets/delete.svg" alt="delete" >
-                    <img  src="../../../assets/edit.svg" alt="update">
+                    <img (click)="delete(person.contactId)"  src="../../../assets/delete.svg" alt="delete" >
+                    <img (click)="editById(person.contactId)" src="../../../assets/edit.svg" alt="update">
                 </td>
             </tr>
             

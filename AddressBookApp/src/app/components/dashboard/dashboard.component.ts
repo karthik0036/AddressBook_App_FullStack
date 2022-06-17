@@ -28,4 +28,15 @@ export class DashboardComponent implements OnInit {
     })
   }
 
+  delete(id: number) {
+    this.addressBookService.deleteAddress(id).subscribe((response:any)=> {
+      console.log(response.data);
+      this.ngOnInit();      
+    });
+  }
+
+  editById(id:number){
+    this.router.navigate(['update',id]);
+   }
+
 }

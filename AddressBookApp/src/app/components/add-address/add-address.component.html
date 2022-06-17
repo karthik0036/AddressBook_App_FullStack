@@ -9,12 +9,14 @@
             <div class="row-content">
                 <label for="name"  class="label text">Full Name</label>
                 <br>
-                <input type="text"  class="input" id="name" name="name" placeholder="Enter Your Name here" required  [(ngModel)]="addressbook.fullName">
+                <input type="text" class="input" id="name" name="name" placeholder="Enter Your Name here" required  [(ngModel)]="addressbook.fullName">
+                
             </div>
             <div class="row-content">
                 <label for="email"  class="label text">Email</label>
                 <br>
                 <input type="email"  class="input" id="email" name="email" placeholder="Enter Your mailId here" required  [(ngModel)]="addressbook.email">
+                
             </div>
             <div class="row-content">
                 <label for="phoneNumber"  class="label text">Phone Number</label>
@@ -70,7 +72,8 @@
                 </div>
             </div>
             <div class="buttons-contact">
-                <button (click)="onAddContact()" type="submit"  class="button button-text" id="submitButton">Add</button>
+                <button *ngIf="Id==null" (click)="onAddContact()" type="submit"  class="button button-text" id="submitButton">Add</button>
+                <button *ngIf="Id!=null"  (click)="updateContact()" type="submit"  class="button button-text" id="submitButton">Update</button>
                 <button type="reset" class="button button-text" id="resetButton">Reset</button>
             </div>
         </div>

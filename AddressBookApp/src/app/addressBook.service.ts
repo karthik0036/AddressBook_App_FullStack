@@ -25,6 +25,18 @@ export class AddressBookService {
     return this.httpClient.get<AddressBook[]>(this.baseUrl+"/get")
   }
 
+  deleteAddress(id : any): Observable<any> {
+    return this.httpClient.delete(this.baseUrl + "/delete/"+id);
+  }
+
+  updateAddData(id: number, addressbook: any) {
+    return this.httpClient.put(this.baseUrl+"/update/"+id,addressbook);
+  }
+
+  getAddressBookById(id: number){
+    return this.httpClient.get( this.baseUrl+ "/get/"+ id);
+  }
+
 
 
 
