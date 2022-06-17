@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { AddAddressComponent } from './components/add-address/add-address.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

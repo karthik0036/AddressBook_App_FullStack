@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AddressBook } from '../../addressBookModel';
-// import { AddressBookService } from '../../addressBook.service';
+import { AddressBookService } from '../../addressBook.service';
 import {  ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import {  ActivatedRoute, Router } from '@angular/router';
 })
 export class AddAddressComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: AddressBookService ,private router: Router, private route: ActivatedRoute) { }
 
   addressbook:AddressBook = new AddressBook('','','','','',0,0);
 
@@ -19,7 +19,7 @@ export class AddAddressComponent implements OnInit {
 
   onAddContact(){
     console.log(this.addressbook);
-    // this._service.insertAddressBook(this.addressbook).subscribe(data=>console.log("Data Saved"));
+    this.service.addAddressData(this.addressbook).subscribe((data:any)=>this.router.navigate(['']))
   }
 
 }

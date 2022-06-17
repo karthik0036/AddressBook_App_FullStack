@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from "rxjs/operators";
+import { AddressBook } from './addressBookModel';
 
 
 
@@ -15,9 +16,14 @@ export class AddressBookService {
 
     constructor(private httpClient: HttpClient) {}
 
-    addAddressData(addressbook: any): Observable<any> {
-        return this.httpClient.post(this.baseUrl+"/create",addressbook);
-      }
+  addAddressData(addressbook: AddressBook): Observable<any> {
+      return this.httpClient.post(this.baseUrl+"/create",addressbook);
+    }
+
+
+  getAddressBookDetails(): Observable<AddressBook[]>{
+    return this.httpClient.get<AddressBook[]>(this.baseUrl+"/get")
+  }
 
 
 

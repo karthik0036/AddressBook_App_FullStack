@@ -2,7 +2,7 @@
     <div class="main-header-content">
         <div class="addressbook-detail-text">
             Person Details
-            <span class="contact-count">12</span> 
+            <span class="contact-count">{{PersonCount}}</span> 
         </div>
         <!-- <input type="search" matInput placeholder="Search"> -->
         <a routerLink="/address" routerLinkActive="router-link-active" class="add-button">
@@ -15,7 +15,7 @@
         <table id="table-display" class="table">
             
             <tr>
-                <th>Id</th>
+                <!-- <th></th> -->
                 <th>Name</th>
                 <th>Email</th>
                 <th>Address</th>
@@ -25,54 +25,23 @@
                 <th>Phone Number</th>
                 <th>Actions</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Aa</td>
-                <td>Aa@gmail</td>
+            <tr *ngFor="let person of addressbook;">
+                <!-- <td>{{person.contactId}}</td> -->
+                <td>{{person.fullName}}</td>
+                <td>{{person.email}}</td>
                 <td>
-                   Bbb
+                    {{person.address}}
                 </td>
-                <td>Cc</td>
-                <td>Ddd</td>
-                <td>123</td>
-                <td>1234</td>
-                <td>
-                    <img  src="../../../assets/delete.svg" alt="delete" >
-                    <img  src="../../../assets/edit.svg" alt="update">
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Aa</td>
-                <td>Aa@gmail</td>
-                <td>
-                   Bbb
-                </td>
-                <td>Cc</td>
-                <td>Ddd</td>
-                <td>123</td>
-                <td>1234</td>
+                <td>{{person.city}}</td>
+                <td>{{person.state}}</td>
+                <td>{{person.zip}}</td>
+                <td>{{person.phone}}</td>
                 <td>
                     <img  src="../../../assets/delete.svg" alt="delete" >
                     <img  src="../../../assets/edit.svg" alt="update">
                 </td>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Aa</td>
-                <td>Aa@gmail</td>
-                <td>
-                   Bbb
-                </td>
-                <td>Cc</td>
-                <td>Ddd</td>
-                <td>123</td>
-                <td>1234</td>
-                <td>
-                    <img  src="../../../assets/delete.svg" alt="delete" >
-                    <img  src="../../../assets/edit.svg" alt="update">
-                </td>
-            </tr>
+            
         </table>
     </div>
 </div>
